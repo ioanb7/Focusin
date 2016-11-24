@@ -44,15 +44,15 @@ namespace Focusin
         private void OnKeyPressed(object sender, GlobalKeyboardHookEventArgs e)
         {
 
-            if (e.KeyboardData.VirtualCode < GlobalKeyboardHook.VkNumpad0 &&
-                e.KeyboardData.VirtualCode > GlobalKeyboardHook.VkNumpad9 &&
+            if ((e.KeyboardData.VirtualCode < GlobalKeyboardHook.VkNumpad0 ||
+                e.KeyboardData.VirtualCode > GlobalKeyboardHook.VkNumpad9) &&
                 e.KeyboardData.VirtualCode != GlobalKeyboardHook.VkNumpadMultiply &&
                 e.KeyboardData.VirtualCode != GlobalKeyboardHook.VkSubstract)
             {
                 return;
             }
 
-            // TODO: write your config here.
+            // TODO: write your config here.d
 
             if (e.KeyboardData.VirtualCode == GlobalKeyboardHook.VkNumpad0)
             {
