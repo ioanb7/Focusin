@@ -32,12 +32,9 @@ namespace Focusin
         public MainWindow()
         {
             InitializeComponent();
-
-
+            
             _globalKeyboardHook = new GlobalKeyboardHook();
             _globalKeyboardHook.KeyboardPressed += OnKeyPressed;
-
-
         }
 
 
@@ -70,13 +67,18 @@ namespace Focusin
             {
                 PowerNthProcessThatContains("mintty", 2);
             }
+            if (e.KeyboardData.VirtualCode == GlobalKeyboardHook.VkNumpad5)
+            {
+                PowerAllProcessesThatContains("notepad");
+            }
             if (e.KeyboardData.VirtualCode == GlobalKeyboardHook.VkNumpadMultiply)
             {
                 PowerUpProcess("UE4Editor");
             }
             if (e.KeyboardData.VirtualCode == GlobalKeyboardHook.VkSubstract)
             {
-                PowerAllProcessesThatContains("ApacheDirectoryStudio");
+                //PowerAllProcessesThatContains("ApacheDirectoryStudio");
+                PowerAllProcessesThatContains("hrome");
             }
 
             if (e.KeyboardState == GlobalKeyboardHook.KeyboardState.KeyDown)
